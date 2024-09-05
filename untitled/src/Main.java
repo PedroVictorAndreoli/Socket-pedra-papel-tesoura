@@ -30,13 +30,13 @@ class tcpServer{
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-        int k = in.readInt();
         while (!vec.contains(res)) {
             System.out.println("Informe: \n1 - para papel\n2 - para pedra\n3 - para tesoura");
             res = scanner.nextInt();
             if (!vec.contains(res))
                 System.out.println("numero invalido");
         }
+        int k = in.readInt();
         System.out.println("Aguardando jogador 2");
         if(res == 1)
             resJodador1 = "Jogador 1 jogou papel";
